@@ -3,8 +3,10 @@ import cv2
 capture = cv2.VideoCapture(0)
 if not capture.isOpened():
     exit()
-capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
+capture.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+capture.set(cv2.CAP_PROP_FPS, 30)
 
 while True:
     ret, frame = capture.read()
