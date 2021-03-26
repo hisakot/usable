@@ -10,6 +10,10 @@ from tkinter import *
 import tkinter as tk
 import calendar
 
+# read calendar id
+with open('calendarId.txt', 'r') as f:
+    CALENDARID = f.readline()
+
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
 
@@ -44,7 +48,7 @@ def google_calendar(tmin, tmax):
 #     tmin = datetime.datetime(2021, 3, 1).isoformat() + 'Z'
     print('Getting the upcoming 10 events')
     events_result = service.events().list(
-            calendarId='uk7unib89vfne79eiriklheogs@group.calendar.google.com',
+            calendarId=CALENDARID,
             timeMin=tmin, 
             timeMax=tmax, 
             maxResults=10,
