@@ -45,7 +45,6 @@ def google_calendar(tmin, tmax):
     # Call the Calendar API
     now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
     events_result = service.events().list(
-#             calendarId='uk7unib89vfne79eiriklheogs@group.calendar.google.com',
             calendarId=CALENDARID,
             timeMin=tmin, 
             timeMax=tmax, 
